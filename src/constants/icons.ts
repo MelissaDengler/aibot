@@ -1,0 +1,33 @@
+import { Scale, Stethoscope, UserRound, Calculator, Briefcase, GraduationCap, 
+         Hammer, ChefHat, Plane, LineChart, Code, Search, BarChart, Home, Leaf,
+         ClipboardList, Palette, Shield, Truck, Building2, DollarSign, Wheat, Users,
+         Lock, Box, Building } from 'lucide-react';
+
+export const iconMap = {
+  Scale,
+  Stethoscope,
+  UserRound,
+  Calculator,
+  Briefcase,
+  GraduationCap,
+  Hammer,
+  ChefHat,
+  Plane,
+  LineChart,
+  Code,
+  Search,
+  BarChart,
+  Home,
+  Leaf,
+  ClipboardList,
+  Palette,
+  Shield,
+  Truck,
+  Building2,
+  DollarSign,
+  Wheat,
+  Users,
+  Lock,
+  Box,
+  Building
+}; 

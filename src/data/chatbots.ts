@@ -3,9 +3,15 @@ import { ChatBot } from '../types';
 export const chatbots: ChatBot[] = [
   {
     id: 'legal',
-    name: 'LegalBot',
+    name: {
+      en: 'LegalBot',
+      af: 'RegsBot'
+    },
     icon: 'Scale',
-    description: 'Expert legal guidance and contract advice',
+    description: {
+      en: 'Expert legal guidance and contract advice',
+      af: 'Deskundige regsleiding en kontrakadvies'
+    },
     industry: 'Legal',
     category: 'Professional Services',
     languages: ['en', 'af'],
@@ -78,9 +84,15 @@ export const chatbots: ChatBot[] = [
   },
   {
     id: 'medical',
-    name: 'MedBot',
+    name: {
+      en: 'MedBot',
+      af: 'MediesBot'
+    },
     icon: 'Stethoscope',
-    description: 'General medical information and health guidance',
+    description: {
+      en: 'General medical information and health guidance',
+      af: 'Algemene mediese inligting en gesondheidsleiding'
+    },
     industry: 'Healthcare',
     category: 'Healthcare',
     languages: ['en', 'af'],
@@ -129,9 +141,15 @@ export const chatbots: ChatBot[] = [
   },
   {
     id: 'hr',
-    name: 'HRBot',
+    name: {
+      en: 'HRBot',
+      af: 'MHBot'
+    },
     icon: 'UserRound',
-    description: 'Human resources and workplace guidance',
+    description: {
+      en: 'Human resources and workplace guidance',
+      af: 'Menslike hulpbronne en werkplek leiding'
+    },
     industry: 'HR',
     category: 'Professional Services',
     languages: ['en', 'af'],
@@ -218,7 +236,10 @@ export const chatbots: ChatBot[] = [
     id: 'accounting',
     name: 'FinBot',
     icon: 'Calculator',
-    description: 'Financial advice and accounting guidance',
+    description: {
+      en: 'Financial advice and accounting guidance',
+      af: 'Finansiële advies en rekeningkundige leiding'
+    },
     industry: 'Accounting',
     category: 'Professional Services',
     languages: ['en', 'af'],
@@ -387,6 +408,30 @@ export const chatbots: ChatBot[] = [
         answer: {
           en: "Curriculum planning steps:\n1. Set learning objectives\n2. Choose teaching methods\n3. Plan assessments\n4. Include diverse materials\n5. Regular review and updates",
           af: "Kurrikulumbeplanningstappe:\n1. Stel leerdoelwitte\n2. Kies onderrigmetodes\n3. Beplan assesserings\n4. Sluit diverse materiaal in\n5. Gereelde hersiening en opdaterings"
+        }
+      },
+      {
+        id: 'assessment-methods',
+        category: 'Evaluation',
+        question: {
+          en: "What are effective assessment methods?",
+          af: "Wat is effektiewe assesseringsmetodes?"
+        },
+        answer: {
+          en: "Assessment frameworks:\n\n1. Formative Assessment\n- Continuous feedback\n- Progress monitoring\n- Adaptive teaching\n\n2. Summative Assessment\n- Final examinations\n- Project evaluations\n- Portfolio reviews\n\n3. Performance Metrics\n- Learning outcomes\n- Skill acquisition\n- Knowledge retention",
+          af: "Assesseringsraamwerke:\n\n1. Formatiewe Assessering\n- Deurlopende terugvoer\n- Vordering monitering\n- Aanpasbare onderrig\n\n2. Summatiewe Assessering\n- Finale eksamens\n- Projek evaluerings\n- Portefeulje oorsigte\n\n3. Prestasie Metrieke\n- Leeruitkomste\n- Vaardigheidsverwerwing\n- Kennisretensie"
+        }
+      },
+      {
+        id: 'education-technology',
+        category: 'EdTech',
+        question: {
+          en: "How to integrate technology in education?",
+          af: "Hoe integreer ek tegnologie in onderwys?"
+        },
+        answer: {
+          en: "Educational technology integration:\n\n1. Digital Tools\n- Learning management systems\n- Interactive platforms\n- Assessment software\n\n2. Implementation Strategy\n- Teacher training\n- Infrastructure setup\n- Support systems\n\n3. Best Practices\n- Blended learning approach\n- Digital literacy development\n- Accessibility considerations",
+          af: "Onderwystegnologie integrasie:\n\n1. Digitale Gereedskap\n- Leerbestuurstelsels\n- Interaktiewe platforms\n- Assessering sagteware\n\n2. Implementeringstrategie\n- Onderwyser opleiding\n- Infrastruktuur opstelling\n- Ondersteuningstelsels\n\n3. Beste Praktyke\n- Gemengde leer benadering\n- Digitale geletterdheid ontwikkeling\n- Toeganklikheid oorwegings"
         }
       }
     ]
@@ -588,6 +633,495 @@ export const chatbots: ChatBot[] = [
         answer: {
           en: "Cultural immersion tips:\n1. Learn basic phrases\n2. Try local cuisine\n3. Attend local events\n4. Visit markets\n5. Engage with locals",
           af: "Kulturele onderdompeling wenke:\n1. Leer basiese frases\n2. Probeer plaaslike kos\n3. Woon plaaslike gebeurtenisse by\n4. Besoek markte\n5. Skakel in met plaaslike inwoners"
+        }
+      }
+    ]
+  },
+  {
+    id: 'marketing',
+    name: 'MarketingBot',
+    icon: 'LineChart',
+    description: 'Digital marketing and brand strategy expertise',
+    industry: 'Marketing',
+    category: 'Professional Services',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Hello! I'm your marketing strategy assistant. How can I help grow your brand today?",
+      af: "Hallo! Ek is jou bemarkingstrategie-assistent. Hoe kan ek vandag help om jou handelsmerk te laat groei?"
+    },
+    commonQuestions: [
+      {
+        id: 'digital-strategy',
+        category: 'Digital Marketing',
+        question: {
+          en: "How to create a digital marketing strategy?",
+          af: "Hoe skep ek 'n digitale bemarkingstrategie?"
+        },
+        answer: {
+          en: "Digital marketing strategy steps:\n1. Define target audience\n2. Set SMART goals\n3. Choose marketing channels\n4. Create content strategy\n5. Set budget allocation\n6. Implement analytics tracking",
+          af: "Digitale bemarkingstrategie stappe:\n1. Definieer teikengehoor\n2. Stel SMART-doelwitte\n3. Kies bemarkingskanale\n4. Skep inhoudstrategie\n5. Stel begroting toe\n6. Implementeer analise-opsporing"
+        }
+      },
+      {
+        id: 'social-media',
+        category: 'Social Media',
+        question: {
+          en: "What's an effective social media strategy?",
+          af: "Wat is 'n effektiewe sosiale media strategie?"
+        },
+        answer: {
+          en: "Social media best practices:\n1. Platform selection based on audience\n2. Content calendar planning\n3. Engagement strategies\n4. Paid advertising approach\n5. Performance monitoring",
+          af: "Sosiale media beste praktyke:\n1. Platform-keuse gebaseer op gehoor\n2. Inhoudkalenderbeplanning\n3. Betrokkenheidstrategieë\n4. Betaalde advertensiebenadering\n5. Prestasiemonitering"
+        }
+      },
+      {
+        id: 'marketing-metrics',
+        category: 'Analytics',
+        question: {
+          en: "What are key marketing KPIs to track?",
+          af: "Watter belangrike bemarkings-KPIs moet gemonitor word?"
+        },
+        answer: {
+          en: "Essential marketing metrics:\n\n1. Acquisition Metrics\n- Customer Acquisition Cost (CAC)\n- Conversion rates\n- Traffic sources\n\n2. Engagement Metrics\n- Click-through rates\n- Time on site\n- Bounce rates\n\n3. Revenue Metrics\n- Return on Ad Spend (ROAS)\n- Customer Lifetime Value (CLV)\n- Revenue per customer\n\n4. Social Metrics\n- Engagement rates\n- Reach and impressions\n- Share of voice",
+          af: "Noodsaaklike bemarkingsmetrieke:\n\n1. Verkrygingsmetrieke\n- Kliëntverkrygingskoste (KVK)\n- Omsettingskoerse\n- Verkeerbronne\n\n2. Betrokkenheidsmetrieke\n- Deurklikkoerse\n- Tyd op werf\n- Wegspringkoerse\n\n3. Inkomstemetrieke\n- Opbrengs op Advertensiebesteding (ROAB)\n- Kliëntlewenswaarde (KLW)\n- Inkomste per kliënt\n\n4. Sosiale Metrieke\n- Betrokkenheidskoerse\n- Bereik en indrukke\n- Stem-aandeel"
+        }
+      }
+    ]
+  },
+  {
+    id: 'it',
+    name: 'TechBot',
+    icon: 'Code',
+    description: 'IT and software development guidance',
+    industry: 'Technology',
+    category: 'Professional Services',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Welcome! I'm your IT and development assistant. How can I help with your technical challenges?",
+      af: "Welkom! Ek is jou IT- en ontwikkelingsassistent. Hoe kan ek help met jou tegniese uitdagings?"
+    },
+    commonQuestions: [
+      {
+        id: 'system-architecture',
+        category: 'Development',
+        question: {
+          en: "How to design scalable system architecture?",
+          af: "Hoe ontwerp ek skaalbare stelselargitektuur?"
+        },
+        answer: {
+          en: "System architecture principles:\n1. Microservices approach\n2. Load balancing\n3. Caching strategies\n4. Database optimization\n5. Security implementation\n6. Monitoring setup",
+          af: "Stelselargitektuur beginsels:\n1. Mikrodienste-benadering\n2. Lasbalansering\n3. Kasstrategieë\n4. Databasis-optimalisering\n5. Sekuriteitsimplementering\n6. Moniteringsopstelling"
+        }
+      },
+      {
+        id: 'cloud-architecture',
+        category: 'Cloud Computing',
+        question: {
+          en: "What are cloud architecture best practices?",
+          af: "Wat is wolkargitektuur beste praktyke?"
+        },
+        answer: {
+          en: "Cloud architecture principles:\n\n1. Scalability\n- Auto-scaling configuration\n- Load balancing setup\n- Resource optimization\n\n2. Security\n- Identity management\n- Encryption standards\n- Network security\n\n3. Cost Optimization\n- Resource rightsizing\n- Reserved instances\n- Cost monitoring\n\n4. Reliability\n- Multi-zone deployment\n- Disaster recovery\n- Backup strategies",
+          af: "Wolkargitektuur beginsels:\n\n1. Skaalbaarheid\n- Outoskaling konfigurasie\n- Lasbalansering opstelling\n- Hulpbron optimalisering\n\n2. Sekuriteit\n- Identiteitsbestuur\n- Enkripsiestandaarde\n- Netwerksekuriteit\n\n3. Koste-optimalisering\n- Hulpbron regte grootte\n- Gereserveerde instansies\n- Kostemonitoring\n\n4. Betroubaarheid\n- Multi-sone ontplooiing\n- Rampherstel\n- Rugsteunstrategieë"
+        }
+      }
+    ]
+  },
+  {
+    id: 'consulting',
+    name: 'ConsultingBot',
+    icon: 'Briefcase',
+    description: 'Management consulting and strategy advice',
+    industry: 'Consulting',
+    category: 'Professional Services',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Hello! I'm your management consulting assistant. Ready to help optimize your business strategy.",
+      af: "Hallo! Ek is jou bestuurskonsultasie-assistent. Gereed om jou besigheidstrategie te optimaliseer."
+    },
+    commonQuestions: [
+      {
+        id: 'business-strategy',
+        category: 'Strategy',
+        question: {
+          en: "How to develop a business strategy?",
+          af: "Hoe ontwikkel ek 'n besigheidstrategie?"
+        },
+        answer: {
+          en: "Strategic planning process:\n1. Market analysis\n2. Competitive positioning\n3. Value proposition\n4. Resource allocation\n5. Implementation roadmap\n6. Performance metrics",
+          af: "Strategiese beplanningsproses:\n1. Markanalise\n2. Mededingende posisionering\n3. Waardeproposisie\n4. Hulpbrontoewysing\n5. Implementeringspadkaart\n6. Prestasie-metrics"
+        }
+      }
+    ]
+  },
+  {
+    id: 'research',
+    name: 'ResearchBot',
+    icon: 'Search',
+    description: 'Academic research and methodology guidance',
+    industry: 'Research',
+    category: 'Academic & Research',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Welcome! I'm your research methodology assistant. How can I help with your research project?",
+      af: "Welkom! Ek is jou navorsingsmetodologie-assistent. Hoe kan ek help met jou navorsingsprojek?"
+    },
+    commonQuestions: [
+      {
+        id: 'research-design',
+        category: 'Methodology',
+        question: {
+          en: "How to design a research study?",
+          af: "Hoe ontwerp ek 'n navorsingstudie?"
+        },
+        answer: {
+          en: "Research design process:\n\n1. Research Question Development\n- Problem identification\n- Literature review\n- Gap analysis\n- Research objectives\n\n2. Methodology Selection\n- Quantitative vs qualitative\n- Mixed methods approach\n- Data collection methods\n\n3. Sampling Strategy\n- Population definition\n- Sample size calculation\n- Sampling techniques",
+          af: "Navorsingsontwerp proses:\n\n1. Navorsingsvraag Ontwikkeling\n- Probleemidentifikasie\n- Literatuuroorsig\n- Gapingsanalise\n- Navorsingsdoelwitte\n\n2. Metodologie Keuse\n- Kwantitatief vs kwalitatief\n- Gemengde metodes benadering\n- Data-insamelingsmetodes\n\n3. Steekproefstrategie\n- Populasie definisie\n- Steekproefgrootte berekening\n- Steekproeftegnieke"
+        }
+      }
+    ]
+  },
+  {
+    id: 'datascience',
+    name: 'DataBot',
+    icon: 'BarChart',
+    description: 'Data science and analytics expertise',
+    industry: 'Data Science',
+    category: 'Technology',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Hello! I'm your data science assistant. How can I help analyze your data today?",
+      af: "Hallo! Ek is jou datawetenskapassistent. Hoe kan ek vandag help om jou data te analiseer?"
+    },
+    commonQuestions: [
+      {
+        id: 'data-analysis',
+        category: 'Analytics',
+        question: {
+          en: "What are key steps in data analysis?",
+          af: "Wat is die belangrikste stappe in data-analise?"
+        },
+        answer: {
+          en: "Data analysis framework:\n\n1. Data Collection\n- Source identification\n- Data quality assessment\n- Collection methods\n\n2. Data Preprocessing\n- Cleaning techniques\n- Feature engineering\n- Normalization\n\n3. Analysis Methods\n- Statistical analysis\n- Machine learning models\n- Visualization techniques\n\n4. Interpretation\n- Results validation\n- Insights extraction\n- Recommendations",
+          af: "Data-analise raamwerk:\n\n1. Data-insameling\n- Bronidentifikasie\n- Datakwaliteit assessering\n- Insamelingsmetodes\n\n2. Data Voorverwerking\n- Skoonmaaktegnieke\n- Kenmerkingenieurswese\n- Normalisering\n\n3. Analise Metodes\n- Statistiese analise\n- Masjienleermodelle\n- Visualiseringstegnieke\n\n4. Interpretasie\n- Resultaatvalidering\n- Insigekstraksie\n- Aanbevelings"
+        }
+      },
+      {
+        id: 'machine-learning',
+        category: 'Advanced Analytics',
+        question: {
+          en: "What are key machine learning concepts?",
+          af: "Wat is belangrike masjienleer konsepte?"
+        },
+        answer: {
+          en: "Machine learning fundamentals:\n\n1. Supervised Learning\n- Classification algorithms\n- Regression methods\n- Model validation\n\n2. Unsupervised Learning\n- Clustering techniques\n- Dimensionality reduction\n- Pattern recognition\n\n3. Model Evaluation\n- Cross-validation\n- Performance metrics\n- Hyperparameter tuning",
+          af: "Masjienleer grondbeginsels:\n\n1. Begeleide Leer\n- Klassifikasie algoritmes\n- Regressie metodes\n- Model validering\n\n2. Onbegeleide Leer\n- Groepering tegnieke\n- Dimensionaliteit vermindering\n- Patroonherkenning\n\n3. Model Evaluering\n- Kruisvalidering\n- Prestasie metrieke\n- Hiperparameter instelling"
+        }
+      },
+      {
+        id: 'data-visualization',
+        category: 'Visualization',
+        question: {
+          en: "How to create effective data visualizations?",
+          af: "Hoe skep ek effektiewe data visualiserings?"
+        },
+        answer: {
+          en: "Data visualization principles:\n\n1. Chart Selection\n- Purpose alignment\n- Data type considerations\n- Audience needs\n\n2. Design Elements\n- Color theory\n- Layout principles\n- Interactive features\n\n3. Best Practices\n- Data-ink ratio\n- Cognitive load\n- Accessibility standards",
+          af: "Data visualisering beginsels:\n\n1. Grafiek Keuse\n- Doel belyning\n- Data tipe oorwegings\n- Gehoor behoeftes\n\n2. Ontwerp Elemente\n- Kleurteorie\n- Uitlegbeginsels\n- Interaktiewe kenmerke\n\n3. Beste Praktyke\n- Data-ink verhouding\n- Kognitiewe las\n- Toeganklikheidstandaarde"
+        }
+      },
+      {
+        id: 'big-data',
+        category: 'Infrastructure',
+        question: {
+          en: "How to handle big data processing?",
+          af: "Hoe hanteer ek groot data verwerking?"
+        },
+        answer: {
+          en: "Big data architecture:\n\n1. Data Storage\n- Distributed systems\n- Data lakes\n- Cloud solutions\n\n2. Processing Framework\n- Batch processing\n- Stream processing\n- Real-time analytics\n\n3. Performance Optimization\n- Scalability planning\n- Resource management\n- Query optimization",
+          af: "Groot data argitektuur:\n\n1. Data Stoor\n- Verspreide stelsels\n- Data mere\n- Wolk oplossings\n\n2. Verwerkingsraamwerk\n- Bondelverwerking\n- Stroomverwerking\n- Intydse analise\n\n3. Prestasie Optimalisering\n- Skaalbaarheid beplanning\n- Hulpbronbestuur\n- Navraag optimalisering"
+        }
+      }
+    ]
+  },
+  {
+    id: 'realestate',
+    name: 'PropertyBot',
+    icon: 'Home',
+    description: 'Real estate and property management expertise',
+    industry: 'Real Estate',
+    category: 'Property & Development',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Welcome! I'm your real estate advisor. How can I help with your property needs?",
+      af: "Welkom! Ek is jou eiendomsadviseur. Hoe kan ek help met jou eiendomsbehoeftes?"
+    },
+    commonQuestions: [
+      {
+        id: 'market-analysis',
+        category: 'Analysis',
+        question: {
+          en: "How to analyze property market value?",
+          af: "Hoe analiseer ek eiendomsmarkwaarde?"
+        },
+        answer: {
+          en: "Property valuation factors:\n\n1. Location Analysis\n- Neighborhood demographics\n- Local amenities\n- Future development plans\n\n2. Property Assessment\n- Size and condition\n- Recent improvements\n- Unique features\n\n3. Market Comparison\n- Recent sales data\n- Similar properties\n- Market trends",
+          af: "Eiendomswaardasie faktore:\n\n1. Ligging Analise\n- Buurt demografie\n- Plaaslike geriewe\n- Toekomstige ontwikkelingsplanne\n\n2. Eiendomsassessering\n- Grootte en toestand\n- Onlangse verbeterings\n- Unieke kenmerke\n\n3. Markvergelyking\n- Onlangse verkoopsdata\n- Soortgelyke eiendomme\n- Marktendense"
+        }
+      }
+    ]
+  },
+  {
+    id: 'sustainability',
+    name: 'EcoBot',
+    icon: 'Leaf',
+    description: 'Environmental sustainability and green practices',
+    industry: 'Environmental',
+    category: 'Sustainability',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Hello! I'm your sustainability advisor. How can I help make your practices more environmentally friendly?",
+      af: "Hallo! Ek is jou volhoubaarheidsadviseur. Hoe kan ek help om jou praktyke meer omgewingsvriendelik te maak?"
+    },
+    commonQuestions: [
+      {
+        id: 'green-practices',
+        category: 'Implementation',
+        question: {
+          en: "What are key sustainable business practices?",
+          af: "Wat is belangrike volhoubare besigheidspraktyke?"
+        },
+        answer: {
+          en: "Sustainable business framework:\n\n1. Resource Management\n- Energy efficiency\n- Waste reduction\n- Water conservation\n\n2. Supply Chain\n- Sustainable sourcing\n- Ethical partnerships\n- Carbon footprint reduction\n\n3. Reporting & Metrics\n- Environmental impact\n- Sustainability goals\n- Progress tracking",
+          af: "Volhoubare besigheidsraamwerk:\n\n1. Hulpbronbestuur\n- Energie-doeltreffendheid\n- Afvalvermindering\n- Waterbewaring\n\n2. Voorsieningsketting\n- Volhoubare verkryging\n- Etiese vennootskappe\n- Koolstofvoetspoor vermindering\n\n3. Verslagdoening & Metrieke\n- Omgewingsimpak\n- Volhoubaarheid doelwitte\n- Vordering volg"
+        }
+      }
+    ]
+  },
+  {
+    id: 'projectmanagement',
+    name: 'ProjectBot',
+    icon: 'ClipboardList',
+    description: 'Project management and agile methodology expertise',
+    industry: 'Project Management',
+    category: 'Professional Services',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Welcome! I'm your project management advisor. How can I help optimize your project delivery?",
+      af: "Welkom! Ek is jou projekbestuur-adviseur. Hoe kan ek help om jou projeklewering te optimaliseer?"
+    },
+    commonQuestions: [
+      {
+        id: 'agile-methodology',
+        category: 'Methodology',
+        question: {
+          en: "How to implement Agile methodology?",
+          af: "Hoe implementeer ek Agile-metodologie?"
+        },
+        answer: {
+          en: "Agile implementation guide:\n\n1. Framework Selection\n- Scrum vs Kanban\n- Hybrid approaches\n- Team structure\n\n2. Process Setup\n- Sprint planning\n- Daily standups\n- Retrospectives\n\n3. Tools & Metrics\n- Project tracking\n- Velocity measurement\n- Burndown charts",
+          af: "Agile implementeringsgids:\n\n1. Raamwerk Keuse\n- Scrum vs Kanban\n- Hibriede benaderings\n- Spanstruktuur\n\n2. Proses Opstelling\n- Sprint beplanning\n- Daaglikse standups\n- Retrospektiewes\n\n3. Gereedskap & Metrieke\n- Projeknasporing\n- Snelheid meting\n- Afbrandkaarte"
+        }
+      },
+      {
+        id: 'risk-management',
+        category: 'Risk',
+        question: {
+          en: "How to manage project risks?",
+          af: "Hoe bestuur ek projekrisiko's?"
+        },
+        answer: {
+          en: "Risk management framework:\n\n1. Risk Identification\n- Brainstorming sessions\n- Historical analysis\n- Expert consultation\n\n2. Assessment\n- Impact evaluation\n- Probability analysis\n- Priority setting\n\n3. Mitigation Strategies\n- Preventive actions\n- Contingency plans\n- Response protocols",
+          af: "Risikobestuur raamwerk:\n\n1. Risiko Identifikasie\n- Dinkskrumsessies\n- Historiese analise\n- Deskundige konsultasie\n\n2. Assessering\n- Impakevaluering\n- Waarskynlikheidsanalise\n- Prioriteitstelling\n\n3. Versagtingstrategieë\n- Voorkomende aksies\n- Gebeurlikheidsplanne\n- Reaksieprotokolle"
+        }
+      }
+    ]
+  },
+  {
+    id: 'design',
+    name: 'DesignBot',
+    icon: 'Palette',
+    description: 'Digital design and UX/UI expertise',
+    industry: 'Design',
+    category: 'Creative Services',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Hi! I'm your digital design assistant. How can I help enhance your design process?",
+      af: "Hi! Ek is jou digitale ontwerp-assistent. Hoe kan ek help om jou ontwerpproses te verbeter?"
+    },
+    commonQuestions: [
+      {
+        id: 'ux-principles',
+        category: 'UX Design',
+        question: {
+          en: "What are key UX design principles?",
+          af: "Wat is belangrike UX-ontwerpbeginsels?"
+        },
+        answer: {
+          en: "UX design fundamentals:\n\n1. User Research\n- User personas\n- Journey mapping\n- Usability testing\n\n2. Information Architecture\n- Content hierarchy\n- Navigation patterns\n- User flows\n\n3. Interaction Design\n- Feedback mechanisms\n- Gesture controls\n- Microinteractions",
+          af: "UX-ontwerp grondbeginsels:\n\n1. Gebruikersnavorsing\n- Gebruikerpersonas\n- Reiskartering\n- Bruikbaarheidstoetsing\n\n2. Inligtingargitektuur\n- Inhoudshiërargie\n- Navigasiepatrone\n- Gebruikersvloei\n\n3. Interaksie-ontwerp\n- Terugvoermeganismes\n- Gebaarbeheer\n- Mikro-interaksies"
+        }
+      }
+    ]
+  },
+  {
+    id: 'cybersecurity',
+    name: 'SecurityBot',
+    icon: 'Lock',
+    description: 'Cybersecurity and digital protection expertise',
+    industry: 'Security',
+    category: 'Technology',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Welcome! I'm your cybersecurity advisor. How can I help protect your digital assets?",
+      af: "Welkom! Ek is jou kuberveiligheidsadviseur. Hoe kan ek help om jou digitale bates te beskerm?"
+    },
+    commonQuestions: [
+      {
+        id: 'security-best-practices',
+        category: 'Security',
+        question: {
+          en: "What are essential cybersecurity practices?",
+          af: "Wat is noodsaaklike kuberveiligheidspraktyke?"
+        },
+        answer: {
+          en: "Cybersecurity framework:\n\n1. Access Control\n- Multi-factor authentication\n- Role-based access\n- Password policies\n\n2. Network Security\n- Firewall configuration\n- Encryption protocols\n- VPN implementation\n\n3. Threat Detection\n- Security monitoring\n- Incident response\n- Regular audits",
+          af: "Kuberveiligheidsraamwerk:\n\n1. Toegangsbeheer\n- Multi-faktor verifikasie\n- Rolgebaseerde toegang\n- Wagwoordbeleide\n\n2. Netwerksekuriteit\n- Brandmuur konfigurasie\n- Enkripsie protokolle\n- VPN implementering\n\n3. Dreigementopsporing\n- Sekuriteitmonitering\n- Voorvalreaksie\n- Gereelde oudits"
+        }
+      }
+    ]
+  },
+  {
+    id: 'supplychain',
+    name: 'LogisticsBot',
+    icon: 'Box',
+    description: 'Supply chain and logistics management expertise',
+    industry: 'Logistics',
+    category: 'Operations',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Hello! I'm your supply chain advisor. How can I help optimize your logistics?",
+      af: "Hallo! Ek is jou voorsieningsketting-adviseur. Hoe kan ek help om jou logistiek te optimaliseer?"
+    },
+    commonQuestions: [
+      {
+        id: 'supply-chain-optimization',
+        category: 'Operations',
+        question: {
+          en: "How to optimize supply chain efficiency?",
+          af: "Hoe optimaliseer ek voorsieningsketting-doeltreffendheid?"
+        },
+        answer: {
+          en: "Supply chain optimization:\n\n1. Inventory Management\n- Stock level optimization\n- Demand forecasting\n- Warehouse efficiency\n\n2. Transportation\n- Route optimization\n- Carrier selection\n- Cost management\n\n3. Technology Integration\n- Real-time tracking\n- Automated ordering\n- Analytics implementation",
+          af: "Voorsieningsketting optimalisering:\n\n1. Voorraadbestuur\n- Voorraadvlak optimalisering\n- Aanvraagvoorspelling\n- Pakhuisdoeltreffendheid\n\n2. Vervoer\n- Roete optimalisering\n- Karweierskeuse\n- Kostebestuur\n\n3. Tegnologie Integrasie\n- Intydse opsporing\n- Geoutomatiseerde bestelling\n- Analise implementering"
+        }
+      }
+    ]
+  },
+  {
+    id: 'healthcare-admin',
+    name: 'HealthAdminBot',
+    icon: 'Building',
+    description: 'Healthcare administration and management expertise',
+    industry: 'Healthcare Administration',
+    category: 'Healthcare',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Welcome! I'm your healthcare administration advisor. How can I help optimize your healthcare operations?",
+      af: "Welkom! Ek is jou gesondheidsorg-administrasie adviseur. Hoe kan ek help om jou gesondheidsorgbedrywighede te optimaliseer?"
+    },
+    commonQuestions: [
+      {
+        id: 'healthcare-management',
+        category: 'Administration',
+        question: {
+          en: "What are key healthcare management practices?",
+          af: "Wat is belangrike gesondheidsorgbestuurspraktyke?"
+        },
+        answer: {
+          en: "Healthcare management framework:\n\n1. Patient Care\n- Quality metrics\n- Patient satisfaction\n- Care coordination\n\n2. Operations\n- Staff scheduling\n- Resource allocation\n- Compliance management\n\n3. Financial Management\n- Revenue cycle\n- Cost control\n- Insurance processing",
+          af: "Gesondheidsorgbestuur raamwerk:\n\n1. Pasiëntsorg\n- Kwaliteitmetrieke\n- Pasiëntbevrediging\n- Sorgkoördinering\n\n2. Bedrywighede\n- Personeelskedulering\n- Hulpbrontoewysing\n- Nakomingsbestuur\n\n3. Finansiële Bestuur\n- Inkomstesiklus\n- Kostebeheer\n- Versekeringverwerking"
+        }
+      }
+    ]
+  },
+  {
+    id: 'investment',
+    name: 'InvestmentBot',
+    icon: 'DollarSign',
+    description: 'Investment banking and financial markets expertise',
+    industry: 'Finance',
+    category: 'Financial Services',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Welcome! I'm your investment banking advisor. How can I help with your financial strategy?",
+      af: "Welkom! Ek is jou beleggingsbank-adviseur. Hoe kan ek help met jou finansiële strategie?"
+    },
+    commonQuestions: [
+      {
+        id: 'investment-strategy',
+        category: 'Finance',
+        question: {
+          en: "How to develop an investment strategy?",
+          af: "Hoe ontwikkel ek 'n beleggingstrategie?"
+        },
+        answer: {
+          en: "Investment strategy framework:\n\n1. Market Analysis\n- Economic indicators\n- Industry trends\n- Risk assessment\n\n2. Portfolio Management\n- Asset allocation\n- Risk diversification\n- Performance tracking\n\n3. Investment Vehicles\n- Equity markets\n- Fixed income\n- Alternative investments",
+          af: "Beleggingstrategie raamwerk:\n\n1. Markanalise\n- Ekonomiese aanwysers\n- Industrietendense\n- Risiko-assessering\n\n2. Portefeuljebestuur\n- Batetoewysing\n- Risiko diversifikasie\n- Prestasie-opsporing\n\n3. Beleggingsvoertuie\n- Ekwiteitsmarkte\n- Vaste inkomste\n- Alternatiewe beleggings"
+        }
+      }
+    ]
+  },
+  {
+    id: 'agriculture',
+    name: 'AgriBot',
+    icon: 'Wheat',
+    description: 'Agricultural and farming management expertise',
+    industry: 'Agriculture',
+    category: 'Primary Industries',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Welcome! I'm your agriculture advisor. How can I help optimize your farming operations?",
+      af: "Welkom! Ek is jou landbou-adviseur. Hoe kan ek help om jou boerderybedrywighede te optimaliseer?"
+    },
+    commonQuestions: [
+      {
+        id: 'farming-practices',
+        category: 'Agriculture',
+        question: {
+          en: "What are sustainable farming practices?",
+          af: "Wat is volhoubare boerderypraktyke?"
+        },
+        answer: {
+          en: "Sustainable agriculture framework:\n\n1. Crop Management\n- Rotation planning\n- Soil health\n- Water conservation\n\n2. Resource Optimization\n- Equipment efficiency\n- Input management\n- Waste reduction\n\n3. Technology Integration\n- Precision farming\n- Data analytics\n- Weather monitoring",
+          af: "Volhoubare landbou raamwerk:\n\n1. Oesbestuur\n- Rotasiebeplanning\n- Grondgesondheid\n- Waterbewaring\n\n2. Hulpbron Optimalisering\n- Toerusting doeltreffendheid\n- Insetbestuur\n- Afvalvermindering\n\n3. Tegnologie Integrasie\n- Presisieboerdery\n- Data-analise\n- Weermonitoring"
+        }
+      }
+    ]
+  },
+  {
+    id: 'nonprofit',
+    name: 'NonProfitBot',
+    icon: 'Users',
+    description: 'Non-profit organization management expertise',
+    industry: 'Non-Profit',
+    category: 'Social Services',
+    languages: ['en', 'af'],
+    welcomeMessage: {
+      en: "Welcome! I'm your non-profit management advisor. How can I help optimize your organization's impact?",
+      af: "Welkom! Ek is jou nie-winsgewende bestuur-adviseur. Hoe kan ek help om jou organisasie se impak te optimaliseer?"
+    },
+    commonQuestions: [
+      {
+        id: 'nonprofit-management',
+        category: 'Management',
+        question: {
+          en: "How to manage a successful non-profit?",
+          af: "Hoe bestuur ek 'n suksesvolle nie-winsgewende organisasie?"
+        },
+        answer: {
+          en: "Non-profit management framework:\n\n1. Program Development\n- Impact assessment\n- Community engagement\n- Service delivery\n\n2. Resource Management\n- Fundraising strategy\n- Volunteer coordination\n- Grant management\n\n3. Stakeholder Relations\n- Donor engagement\n- Partnership building\n- Community outreach",
+          af: "Nie-winsgewende bestuur raamwerk:\n\n1. Program Ontwikkeling\n- Impakassessering\n- Gemeenskapsbetrokkenheid\n- Dienslewering\n\n2. Hulpbronbestuur\n- Fondsinsamelingstrategie\n- Vrywilliger koördinering\n- Toekenningbestuur\n\n3. Belanghebbende Verhoudings\n- Skenker betrokkenheid\n- Vennootskap bou\n- Gemeenskapsuitreik"
         }
       }
     ]
