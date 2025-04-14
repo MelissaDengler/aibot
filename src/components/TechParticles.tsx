@@ -2,18 +2,86 @@ import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 const TechParticles = () => {
-  // Generate random positions for particles with more variety
-  const particles = useMemo(() => Array.from({ length: 100 }).map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 6 + 3, // Bigger particles
-    duration: Math.random() * 20 + 15,
-    delay: Math.random() * 10,
-    opacity: Math.random() * 0.5 + 0.2, // Higher opacity
-    xOffset: Math.random() * 100 - 50, // Random horizontal movement range
-    yOffset: Math.random() * 100 - 50  // Random vertical movement range
-  })), []);
+  // Generate different types of particles
+  const particles = useMemo(() => {
+    const particleTypes = [
+      // Small fast particles
+      ...Array.from({ length: 50 }).map((_, i) => ({
+        id: `small-${i}`,
+        type: 'small',
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 2 + 1,
+        duration: Math.random() * 4 + 3,
+        delay: Math.random() * 2,
+        opacity: Math.random() * 0.4 + 0.2,
+        xOffset: Math.random() * 40 - 20,
+        yOffset: Math.random() * 40 - 20,
+        color: 'rgba(226, 232, 240, 0.3)' // silver
+      })),
+      
+      // Medium particles with glow
+      ...Array.from({ length: 40 }).map((_, i) => ({
+        id: `medium-${i}`,
+        type: 'medium',
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 3 + 2,
+        duration: Math.random() * 6 + 4,
+        delay: Math.random() * 3,
+        opacity: Math.random() * 0.5 + 0.3,
+        xOffset: Math.random() * 60 - 30,
+        yOffset: Math.random() * 60 - 30,
+        color: 'rgba(147, 197, 253, 0.4)' // blue
+      })),
+
+      // Large slow-moving particles
+      ...Array.from({ length: 30 }).map((_, i) => ({
+        id: `large-${i}`,
+        type: 'large',
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 4 + 3,
+        duration: Math.random() * 8 + 6,
+        delay: Math.random() * 4,
+        opacity: Math.random() * 0.6 + 0.2,
+        xOffset: Math.random() * 80 - 40,
+        yOffset: Math.random() * 80 - 40,
+        color: 'rgba(167, 139, 250, 0.3)' // purple
+      }))
+    ];
+
+    return particleTypes;
+  }, []);
+
+  const getParticleAnimation = (particle: any) => {
+    switch (particle.type) {
+      case 'small':
+        return {
+          x: [particle.xOffset * -1, particle.xOffset, particle.xOffset * -1],
+          y: [particle.yOffset * -1, particle.yOffset, particle.yOffset * -1],
+          opacity: [particle.opacity, particle.opacity * 1.5, particle.opacity],
+          scale: [1, 1.2, 1]
+        };
+      case 'medium':
+        return {
+          x: [particle.xOffset * -1, 0, particle.xOffset],
+          y: [particle.yOffset, particle.yOffset * -1, particle.yOffset],
+          opacity: [particle.opacity, particle.opacity * 2, particle.opacity],
+          scale: [1, 1.4, 1]
+        };
+      case 'large':
+        return {
+          x: [particle.xOffset, particle.xOffset * -1, particle.xOffset],
+          y: [particle.yOffset * -1, particle.yOffset, particle.yOffset * -1],
+          opacity: [particle.opacity * 0.8, particle.opacity * 1.5, particle.opacity * 0.8],
+          scale: [1, 1.3, 1],
+          rotate: [0, 180, 360]
+        };
+      default:
+        return {};
+    }
+  };
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -24,52 +92,37 @@ const TechParticles = () => {
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute bg-silver-400/30 rounded-full"
+          className="absolute rounded-full"
           style={{
             width: particle.size,
             height: particle.size,
             left: `${particle.x}%`,
             top: `${particle.y}%`,
+            backgroundColor: particle.color,
             boxShadow: `
-              0 0 ${particle.size * 2}px rgba(255, 255, 255, 0.3),
-              0 0 ${particle.size * 4}px rgba(255, 255, 255, 0.2)
+              0 0 ${particle.size * 2}px ${particle.color},
+              0 0 ${particle.size * 4}px ${particle.color.replace(/[\d.]+\)$/g, '0.1)')}
             `,
           }}
-          animate={{
-            x: [
-              particle.xOffset * -1,
-              particle.xOffset,
-              particle.xOffset * -1
-            ],
-            y: [
-              particle.yOffset * -1,
-              particle.yOffset,
-              particle.yOffset * -1
-            ],
-            opacity: [
-              particle.opacity,
-              particle.opacity * 1.5,
-              particle.opacity
-            ],
-            scale: [1, 1.5, 1]
-          }}
+          animate={getParticleAnimation(particle)}
           transition={{
             duration: particle.duration,
             delay: particle.delay,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
+            times: [0, 0.5, 1],
           }}
         />
       ))}
 
-      {/* Tech grid with animation */}
+      {/* Tech grid with faster animation */}
       <motion.div 
         className="absolute inset-0 opacity-40"
         animate={{
           backgroundPosition: ['0% 0%', '100% 100%']
         }}
         transition={{
-          duration: 30,
+          duration: 20, // Faster grid movement
           repeat: Infinity,
           ease: "linear"
         }}
@@ -82,7 +135,7 @@ const TechParticles = () => {
         }}
       />
       
-      {/* Enhanced glowing orbs */}
+      {/* Enhanced glowing orbs with faster animations */}
       <motion.div
         animate={{
           opacity: [0.4, 0.8, 0.4],
@@ -91,7 +144,7 @@ const TechParticles = () => {
           y: [-20, 20, -20]
         }}
         transition={{
-          duration: 10,
+          duration: 8, // Faster orb movement
           repeat: Infinity,
           ease: "easeInOut"
         }}
@@ -110,7 +163,7 @@ const TechParticles = () => {
           y: [20, -20, 20]
         }}
         transition={{
-          duration: 12,
+          duration: 10,
           repeat: Infinity,
           ease: "easeInOut"
         }}
@@ -129,7 +182,7 @@ const TechParticles = () => {
           y: [-30, 30, -30]
         }}
         transition={{
-          duration: 8,
+          duration: 6, // Faster movement
           repeat: Infinity,
           ease: "easeInOut"
         }}
